@@ -8,8 +8,7 @@ async function getPrice() {
   document.getElementById("crypto").innerHTML =`
     <!-- header row for explanation -->
   <tr>
-    <td><b>Cryptocurrency name</b></td>
-    <td><b>Symbol</b></td>
+    <td><b>Cryptocurrency</b></td>
     <td><b>Price (USD)</b></td>
     <td><b>Change % (24h)</b></td>
     <td><b>Holdings</b></td>
@@ -30,8 +29,7 @@ async function getPrice() {
 
     document.getElementById("crypto").innerHTML += `
     <tr>
-      <td>${currentName}</td>
-      <td>${currentSymbol}</td>
+      <td>${currentName} (${currentSymbol})</td>
       <td><b>$ ${currentPrice}</b></td>
       <td><font color=${priceChangeBGColor}>${priceChange24h} % </td>
       <td>0</td>
