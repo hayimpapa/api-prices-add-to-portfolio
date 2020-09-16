@@ -76,9 +76,8 @@ getPrice();
 
 function addToPortfolio(){
 //THIS PART IS NOT YET WORKING, BUT I NEED TO SLEEP
-var amountInCrypto = $("#amountToHolding").val();
+var amountInCrypto = parseFloat(document.getElementById("amountToHolding").textContent);
 console.log("this amount : "+ amountInCrypto);
-console.log($("#amountToHolding").val());
 
 
 }
