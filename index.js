@@ -32,7 +32,7 @@ async function getPrice() {
       <td>${currentName} (${currentSymbol})</td>
       <td><b>$ ${currentPrice}</b></td>
       <td><font color=${priceChangeBGColor}>${priceChange24h} % </td>
-      <td>0</td>
+      <td id=${currentSymbol}_holding>0</td>
 <!--      <td><input id=${currentSymbol}_add_amount type=text placeholder=\"Buy ${currentSymbol} for USD\"></td>
       <td><input type=button value=Submit id=${currentSymbol}_add_submit></td> -->
     </tr>`;
@@ -69,15 +69,21 @@ getPrice();
   
   var cryptoValue = USD / Value;
   document.getElementById("amountToHolding").innerHTML = cryptoValue;
-  console.log(Value);
-  console.log(cryptoValue);
     }
 
 
 function addToPortfolio(){
-//THIS PART IS NOT YET WORKING, BUT I NEED TO SLEEP
-var amountInCrypto = parseFloat(document.getElementById("amountToHolding").textContent);
-console.log("this amount : "+ amountInCrypto);
-
+  var amountInCrypto = parseFloat(parseFloat(document.getElementById("amountToHolding").textContent).toFixed(8));
+  console.log("AmountInCrypto: "+ amountInCrypto);
+  console.log(typeof amountInCrypto);
+  var addToThisSymbol = $("#select").val();
+  var hld = addToThisSymbol.concat("_holding");
+  var balance = parseFloat(document.getElementById(hld).textContent);
+  console.log("Balance: "+ balance);
+  console.log(typeof balance);
+  var newBalance = parseFloat(parseFloat(balance + amountInCrypto).toFixed(8));
+  console.log("New Balance: "+ newBalance);
+  console.log(typeof newBalance);
+  document.getElementById(hld).innerHTML = newBalance;
 
 }
