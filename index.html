@@ -2,16 +2,30 @@
   <head>
     <title>Project 1 - Gabor Devenyi, Ivan on Tech Academy</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
   </head>
 
  <body>
    <center><h1>Gabor's cryptocurrency project</h1></center>
 
+    <center>
+    <form>
+      <label>Choose a crypto to buy:</label>
+        <select id="select" onfocusout={calcCrypto()}>
+        </select>
+        <br><br>
+        Amount to add in USD: <input type=text placeholder="Amount to add in USD" id="amountUSD" onfocusout={calcCrypto()}>
+        <br><br>
+        Cryptocurrency amount: <font color="#555555" id="amountToHolding"></font>
+        <br><br>
+        <input type="button" value="Add to portfolio" id=submitSelection onClick={addToPortfolio()}>
+      </form>
+    </center>
+
   <!-- This is just a placeholder table for my design at this stage, how I want to display the list of cryptocurrencies
   from Coingecko and the actions I want to do -->
 
 
-       <script src="./index.js"></script>
        <center><table id="crypto" border=1>
      </table></center>
  </body>
