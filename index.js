@@ -64,7 +64,12 @@ getPrice();
   }
   
   var cryptoValue = USD / Value;
-  document.getElementById("amountToHolding").innerHTML = cryptoValue;
+  if (isNaN(cryptoValue) == true) {
+    document.getElementById("amountToHolding").innerHTML = "Please enter a value!";
+  }
+  else {
+    document.getElementById("amountToHolding").innerHTML = cryptoValue;
+  }
     }
 
 
@@ -80,6 +85,11 @@ function addToPortfolio(){
   var newBalance = parseFloat(parseFloat(balance + amountInCrypto).toFixed(8));
   console.log("New Balance: "+ newBalance);
   console.log(typeof newBalance);
-  document.getElementById(hld).innerHTML = newBalance;
+  if (isNaN(newBalance) == true) {
+    alert("Please enter a value!");
+  }
+  else {
+    document.getElementById(hld).innerHTML = newBalance;
+  }
 
 }
