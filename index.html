@@ -11,10 +11,10 @@
     <center>
     <form>
       <label>Choose a crypto to buy:</label>
-        <select id="select" onfocusout={calcCrypto()}>
+        <select id="select" onchange={calcCrypto()}>
         </select>
         <br><br>
-        Amount to add in USD: <input type=text placeholder="Amount to add in USD" id="amountUSD" onfocusout={calcCrypto()}>
+        Amount to add in USD: <input type=number placeholder="Amount to add in USD" id="amountUSD" onkeypress={calcCrypto()}>
         <br><br>
 <!--        
         Cryptocurrency amount: <font color="#555555" id="amountToHolding"></font> 

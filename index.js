@@ -12,8 +12,6 @@ async function getPrice() {
     <td><b>Price (USD)</b></td>
     <td><b>Change % (24h)</b></td>
     <td><b>Holdings</b></td>
-<!--    <td><b>Amount to add in USD</b></td>
-    <td><b>Action</b></td> -->
   </tr>
   `
   for (let i=0;i<apiData.length;i++){
@@ -33,8 +31,6 @@ async function getPrice() {
       <td><b>$ ${currentPrice}</b></td>
       <td><font color=${priceChangeBGColor}>${priceChange24h} % </td>
       <td id=${currentSymbol}_holding>0</td>
-<!--      <td><input id=${currentSymbol}_add_amount type=text placeholder=\"Buy ${currentSymbol} for USD\"></td>
-      <td><input type=button value=Submit id=${currentSymbol}_add_submit></td> -->
     </tr>`;
 
     document.getElementById("select").innerHTML +=`
